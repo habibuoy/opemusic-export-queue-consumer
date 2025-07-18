@@ -8,7 +8,7 @@ class PlaylistService {
   async getPlaylistSongs(id) {
     const query = {
       text: `
-        SELECT p.id, p.name, u.username, 
+        SELECT p.id, p.name, 
           COALESCE(songs.array, '[]') as songs
         FROM playlists p
         INNER JOIN users u ON p.owner_id = u.id

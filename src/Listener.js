@@ -17,7 +17,9 @@ class Listener {
       const sendResult = await this._mailSender.sendEmail(
         targetEmail,
         `Export playlist ${playlists.id}`,
-        JSON.stringify(playlists),
+        JSON.stringify({
+          playlist: playlists,
+        }),
         filename,
       );
 
